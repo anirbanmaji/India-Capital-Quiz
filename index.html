@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Home</title>
+		<meta charset="UTF-8">
+		<style type="text/css">
+			body{
+				background: #cbd;
+				border-top: 10px;
+				padding: 0px;
+				border: 0px;
+				margin: 0;
+				background-image: url("indiaPattern.jpg");
+				background-size: 50px;
+				background-color: #cbd;
+			}
+			#header{
+				margin: auto;
+				width: 80%;
+				background: #f7941d;
+				color: #f2d9ff;
+				text-align: center;
+				border-radius: 7px;
+				font-size: 25px;
+				font-family: "Century Gothic", sans-serif;
+				font-weight: bold;
+				filter:drop-shadow(8px 8px 10px #555);
+			}
+			.hdrChild{
+				display: inline-block;
+				margin-left: 20px;
+				margin-right: 20px;
+				margin-top: 20px;
+				margin-bottom: 20px;
+				/*border: 5px;
+				margin: 10px;*/
+			}
+			#participant{
+				border-radius: 5px;
+				border-style: none;
+				height: 30px;
+				width: 150px;
+				font-size: 25px;
+				font-family: "Century Gothic", sans-serif;
+				font-weight: bold;
+			}
+			#start{
+				background: linear-gradient(-45deg, rgba(204,40,87,1) 0%, rgba(56,0,178,1) 100%);
+				color: #f2d9ff;
+				font-size: 30px;
+				font-family: "Century Gothic", sans-serif;
+				font-weight: bold;
+				border-radius: 7px;
+				border-style: none;
+				cursor: pointer;
+				filter:drop-shadow(2px 2px 5px #5E390B);
+				transition: 0.5s all;
+			}
+
+			#start:hover{
+				filter:drop-shadow(8px 8px 10px #7A490E);
+				transform: scale(1.02);
+			}
+			#optionContainer{
+				margin: auto;
+				margin-top: 10px;
+				width: 80%;
+				text-align: center;
+				border-radius: 7px;
+				background-image: url("./absDark.jpg");
+				background-repeat: no-repeat;
+    			background-size: cover;
+				padding-top: 30px;
+				padding-bottom: 30px;
+				color: #f2d9ff;
+				font-size: 20px;
+				font-family: "Century Gothic", sans-serif;
+				/*font-weight: bold;*/
+				filter:drop-shadow(8px 8px 10px #555);
+			}
+
+			.state{
+				margin: 0px;
+				border: 0px;
+			}
+
+			.selectNumber{
+				border-radius: 7px;
+				border-style: none;
+				font-size: 20px;
+				font-family: "Century Gothic", sans-serif;
+				/*font-weight: bold;*/
+			}
+			/*option{
+				font-size: 20px;
+				font-family: "Century Gothic", sans-serif;
+				font-weight: bold;
+			}*/
+			#submitdiv{
+				margin: auto;
+				text-align: center;
+			}
+
+			#finish{
+				font-size: 30px;
+				font-family: "Century Gothic", sans-serif;
+				font-weight: bold;
+				background: linear-gradient(-45deg, rgba(204,40,87,1) 0%, rgba(56,0,178,1) 100%);
+				border-radius: 7px;
+				border-style: none;
+				color: #f2d9ff;
+				margin: auto;
+				margin-top: 10px; 
+				margin-bottom: 10px;
+				display: inline-block;
+				cursor: pointer;
+				filter:drop-shadow(2px 2px 5px #5E390B);
+				transition: 0.5s all;
+			}
+			#finish:hover{
+				filter:drop-shadow(8px 8px 10px #7A490E);
+				transform: scale(1.02);
+			}
+
+			#timer{
+				position: fixed;
+				right: 0px;
+				top: 5px;
+				background: #ff0000;
+				color: #f2d9ff;
+				text-align: center;
+				border-radius: 7px 0px 0px 7px;
+				font-size: 25px;
+				font-family: "Century Gothic", sans-serif;
+				font-weight: bold;
+				filter:drop-shadow(10px 10px 12px #555);
+				padding: 5px 20px 5px 20px;
+				z-index: 5;
+			}
+
+			#submitdiv{
+				margin: auto;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				width: 80%;
+				background: #f7941d;
+				color: #f2d9ff;
+				border-radius: 7px;
+				font-family: "Century Gothic", sans-serif;
+				font-weight: bold;
+				filter:drop-shadow(8px 8px 10px #555);
+			}
+
+		</style>
+	</head>
+	<body>
+		<header id="header">
+			<div class="hdrChild">Your name, please : <input id="participant" type="text" name="name" autocomplete='off'></div>
+			<button class="hdrChild" id="start">Start</button>
+			<div class="hdrChild" id="result">Not started.</div>
+		</header>
+		<div id="timer"></div>
+		<div id="optionContainer">
+			<p class="state">Andhra Pradesh :  <select class="selectNumber"><option>Choose the CAPITAL</option></select></p> </br>
+			<p class="state">Arunachal Pradesh :  <select class="selectNumber"><option>Choose the CAPITAL</option></select></p> </br>
+			<p class="state">Assam :  <select class="selectNumber"><option>Choose the CAPITAL</option></select></p> </br>
+			<p class="state">Bihar :  <select class="selectNumber"><option>Choose the CAPITAL</option></select></p> </br>
+			<p class="state">Chhattisgarh :  <select class="selectNumber"><option>Choose the CAPITAL</option></select></p> </br>
+			<p class="state">Goa :  <select class="selectNumber"><option>Choose the CAPITAL</option></select></p> </br>
+			<p class="state">Gujarat :  <select class="selectNumber"><option>Choose the CAPITAL</option></select></p> </br>
+			<p class="state">Haryana :  <select class="selectNumber"><option>Choose the CAPITAL</option></select></p> </br>
+			<p class="state">Himachal Pradesh :  <select class="selectNumber"><option>Choose the CAPITAL</option></select></p> </br>
+			<p class="state">Jammu and Kashmir :  <select class="selectNumber"><option>Choose the CAPITAL</option></select></p> </br>
+			<p class="state">Jharkhand :  <select class="selectNumber"><option>Choose the CAPITAL</option></select></p> </br>
+			<p class="state">Karnataka :  <select class="selectNumber"><option>Choose the CAPITAL</option></select></p> </br>
+			<p class="state">Kerala :  <select class="selectNumber"><option>Choose the CAPITAL</option></select></p> </br>
+			<p class="state">Madhya Pradesh :  <select class="selectNumber"><option>Choose the CAPITAL</option></select></p> </br>
+			<p class="state">Maharashtra :  <select class="selectNumber"><option>Choose the CAPITAL</option></select></p> </br>
+			<p class="state">Manipur :  <select class="selectNumber"><option>Choose the CAPITAL</option></select></p> </br>
+			<p class="state">Meghalaya :  <select class="selectNumber"><option>Choose the CAPITAL</option></select></p> </br>
+			<p class="state">Mizoram :  <select class="selectNumber"><option>Choose the CAPITAL</option></select></p> </br>
+			<p class="state">Nagaland :  <select class="selectNumber"><option>Choose the CAPITAL</option></select></p> </br>
+			<p class="state">Odisha :  <select class="selectNumber"><option>Choose the CAPITAL</option></select></p> </br>
+			<p class="state">Punjab :  <select class="selectNumber"><option>Choose the CAPITAL</option></select></p> </br>
+			<p class="state">Rajasthan :  <select class="selectNumber"><option>Choose the CAPITAL</option></select></p> </br>
+			<p class="state">Sikkim :  <select class="selectNumber"><option>Choose the CAPITAL</option></select></p> </br>
+			<p class="state">Tamil Nadu :  <select class="selectNumber"><option>Choose the CAPITAL</option></select></p> </br>
+			<p class="state">Telangana :  <select class="selectNumber"><option>Choose the CAPITAL</option></select></p> </br>
+			<p class="state">Tripura :  <select class="selectNumber"><option>Choose the CAPITAL</option></select></p> </br>
+			<p class="state">Uttar Pradesh :  <select class="selectNumber"><option>Choose the CAPITAL</option></select></p> </br>
+			<p class="state">Uttarakhand :  <select class="selectNumber"><option>Choose the CAPITAL</option></select></p> </br>
+			<p class="state">West Bengal :  <select class="selectNumber"><option>Choose the CAPITAL</option></select></p> </br>
+		</div>
+		<div id="submitdiv"><input id="finish" type="button" value="Submit"></div>
+		<audio id="audio" src="https://www.noiseforfun.com/waves/creature-and-animals/NFF-frog.wav"></audio>
+	
+
+
+
+		<script type="text/javascript">
+			window.onload = function(e){ 
+				var startTime = 'null';
+				var seconds = 'null';
+				var minSecond = 'null';//seconds to minute and second;
+				var started = false;
+				var timeLimit = 90;//change the time limit here in seconds
+				var name = document.getElementById("participant");
+				var testEndTrigg = 0;//to control the trigger of testEnd function only once. if triggered by time limit then should not be triggerd by submit and vice-versa.
+				var firstStart = true;//to let the start button to be clicked only once in one reload of the page.
+				var selectNumberElement = document.getElementsByClassName("selectNumber");
+				var timerElement = document.getElementById("timer");
+				var resultElement = document.getElementById("result");
+
+				for(var c = 0; c<29; c++){
+					selectNumberElement[c].disabled=true;
+				}
+
+				var startStatic = 0;
+
+				rightAnswer=["Amaravati","Itanagar","Dispur","Patna","Raipur","Panaji","Gandhinagar","Chandigarh","Shimla","Jammu and Srinagar","Ranchi","Bengaluru","Thiruvananthapuram","Bhopal","Mumbai","Imphal","Shillong","Aizawl","Kohima","Bhubaneshwar","Chandigarh","Jaipur","Gangtok","Chennai","Hyderabad","Agartala","Lucknow","Dehradun","Kolkata"];
+
+				capital=["Amaravati","Itanagar","Dispur","Patna","Raipur","Panaji","Gandhinagar","Chandigarh","Shimla","Jammu and Srinagar","Ranchi","Bengaluru","Thiruvananthapuram","Bhopal","Mumbai","Imphal","Shillong","Aizawl","Kohima","Bhubaneshwar","Chandigarh","Jaipur","Gangtok","Chennai","Hyderabad","Agartala","Lucknow","Dehradun","Kolkata"];
+
+				function shuffleArray(array) {
+				    for (var i = array.length - 1; i > 0; i--) {
+				        var j = Math.floor(Math.random() * (i + 1));
+				        var temp = array[i];
+				        array[i] = array[j];
+				        array[j] = temp;
+				    }
+				};
+				var states = selectNumberElement;
+				for (var i = states.length - 1; i >= 0; i--) {
+					
+					shuffleArray(capital);
+
+					var dropdown = states[i];
+					for (var j = capital.length - 1; j >= 0; j--) {
+						var node = document.createElement("option");
+						var textnode = document.createTextNode(capital[j]);
+						node.appendChild(textnode);
+						dropdown.appendChild(node);
+					}
+				}
+
+				var ans = selectNumberElement;
+				document.getElementById("finish").addEventListener("click", function(){
+					if (started == false){
+						alert("You have not yet started");
+					}
+					else if(testEndTrigg == 0){
+						testEndTrigg++;
+						testEnd("auto");
+					}
+				});
+
+				time = timerElement;
+				minSecond = timeLimit>59     ?     "0"+ (Math.floor(timeLimit/60) +":"+ timeLimit%60)     :     ("00:"+timeLimit);
+				time.innerHTML = minSecond;
+
+				function testEnd(howSubmitted) { 
+					submittedAns = [
+								ans[0].value,
+								ans[1].value,
+								ans[2].value,
+								ans[3].value,
+								ans[4].value,
+								ans[5].value,
+								ans[6].value,
+								ans[7].value,
+								ans[8].value,
+								ans[9].value,
+								ans[10].value,
+								ans[11].value,
+								ans[12].value,
+								ans[13].value,
+								ans[14].value,
+								ans[15].value,
+								ans[16].value,
+								ans[17].value,
+								ans[18].value,
+								ans[19].value,
+								ans[20].value,
+								ans[21].value,
+								ans[22].value,
+								ans[23].value,
+								ans[24].value,
+								ans[25].value,
+								ans[26].value,
+								ans[27].value,
+								ans[28].value
+								]
+
+					firstStart = false;
+					var finalMarks = 0;
+					for(var k = 0; k<29; k++){
+						// console.log(rightAnswer[k]);
+						// console.log(submittedAns[k]);
+						if (rightAnswer[k] == submittedAns[k]) {
+							finalMarks++;
+						}
+						else{
+							continue;
+						}
+					}
+					var audio = document.getElementById("audio");
+			       	audio.play();
+
+					alert("your final mark is "+finalMarks);
+					for(var d = 0; d<29; d++){
+						selectNumberElement[d].disabled=true;
+					}
+
+					document.getElementsByTagName("body")[0].removeChild(timerElement);
+					
+					resultElement.innerHTML = name.value+": "+finalMarks+" within " + ((howSubmitted == "timeout") ? minSecond : "0"+Math.floor(seconds/60) + ":"+(seconds%60 < 10 ? '0' : '') + seconds%60);
+					
+					//window.location = "./result.html";
+				}
+
+				
+
+				document.getElementById("start").addEventListener("click", function(){
+					if (name.value == ""){
+						alert("What's the hurry, please enter your name first.")
+					}
+					else if(firstStart == true){
+						started = true;
+						resultElement.innerHTML = "Time is running out.";
+						for(var c = 0; c<29; c++){
+							selectNumberElement[c].disabled=false;
+						}
+
+						if(startStatic==0){
+							var startTime = new Date();
+
+							//start timer
+							setInterval(function(){
+								var now = new Date();
+								millPassed = now - startTime;
+								
+								seconds = Math.floor((millPassed % (1000 * timeLimit)) / 1000);
+								if (Math.floor(millPassed/1000) == timeLimit) {
+									//console.log("time's up");
+									if(testEndTrigg == 0){
+										testEndTrigg++;
+										testEnd("timeout");
+									}
+								}
+								else{
+									remainingSecond = timeLimit-seconds;
+									remainingMin = Math.floor(remainingSecond/60);
+									time.innerHTML = (remainingMin>0 ? "0"+remainingMin : "00")+":"+(remainingSecond%60 < 10 ? '0' : '') + remainingSecond%60; //It's countdown. for upcount replace (timeLimit-seconds) by seconds.
+								}
+							}, 1000);
+						}
+						startStatic++;
+					}
+				});
+			}
+		</script>
+	</body>
+</html>
